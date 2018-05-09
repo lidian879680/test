@@ -22,6 +22,8 @@
                 </configuration>
             </plugin>
 
+            <!--没有web.xml,maven会报错，需要添加这个插件-->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -38,30 +40,6 @@
             </plugin>
 
         </plugins>
-
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<includes>-->
-                    <!--<include>*.xml</include>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-            <!--</resource>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<includes>-->
-                    <!--<include>*.properties</include>-->
-                    <!--<include>**/*.properties</include>-->
-                <!--</includes>-->
-            <!--</resource>-->
-            <!--<resource>-->
-                <!--<directory>src/main/java</directory>-->
-                <!--<includes>-->
-                    <!--<include>*.xml</include>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-            <!--</resource>-->
-        <!--</resources>-->
 
     </build>
 
@@ -88,6 +66,7 @@
             <version>5.1.39</version>
         </dependency>
 
+        <!--数据库连接池配置-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -114,6 +93,8 @@
             <version>7.0</version>
         </dependency>
 
+        <!--下面这两个以来必须有，否则会报错，比较莫名奇妙，非常蛋疼-->
+
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -127,6 +108,8 @@
             <artifactId>spring-orm</artifactId>
             <version>4.3.6.RELEASE</version>
         </dependency>
+
+        <!--rest中json解析-->
 
         <!-- Jackson -->
         <dependency>

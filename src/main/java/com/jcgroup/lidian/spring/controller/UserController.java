@@ -1,6 +1,7 @@
 package com.jcgroup.lidian.spring.controller;
 
 import com.jcgroup.lidian.spring.pojo.UserBean;
+import com.jcgroup.lidian.spring.pojo.req.UserIdReq;
 import com.jcgroup.lidian.spring.pojo.req.UserReq;
 import com.jcgroup.lidian.spring.pojo.vo.JsonResVo;
 import com.jcgroup.lidian.spring.services.UserService;
@@ -44,6 +45,13 @@ public class UserController {
         Map<String, Object> result = new HashMap<>();
         result.put("id", id);
 
+        return JsonResVo.buildSuccess(result);
+    }
+
+    @RequestMapping(value = "find", method = RequestMethod.POST)
+    public JsonResVo findUser(@RequestBody UserIdReq req){
+        String uid = req.getUid();
+        UserBean result = userService.getUser(uid);
         return JsonResVo.buildSuccess(result);
     }
 

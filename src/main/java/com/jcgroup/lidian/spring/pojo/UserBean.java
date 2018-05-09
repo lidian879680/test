@@ -10,6 +10,9 @@ import java.util.Date;
  * Time: 18:54
  */
 public class UserBean {
+    /**
+     * 这个id必须有，否则id回存会报错
+     */
     private Long id;
     private String uid;
     private String nickName;

@@ -11,4 +11,6 @@ import com.jcgroup.lidian.spring.pojo.UserBean;
  */
 public interface UserService {
     String addUser(UserBean userBean);
+
+    UserBean getUser(String uid);
 }

@@ -35,13 +35,13 @@ public class DBConfig {
     @Value("${datasource.general-mysql.driver-class-name}")
     private String driverClassName;
 
-    @Value("${datasource.general-mysql.time-between-eviction-runs-millis}")
-    private Long timeBetweenEvictionRunsMillis;
+//    @Value("${datasource.general-mysql.time-between-eviction-runs-millis}")
+//    private Long timeBetweenEvictionRunsMillis;
     /**
      * 这个配置主要用于定时检测链接是否有效，无效则关闭，定时多长根据timeBetweenEvictionRunsMillis
      */
-    @Value("${datasource.general-mysql.test-while-idle}")
-    private Boolean testWhileIdle;
+//    @Value("${datasource.general-mysql.test-while-idle}")
+//    private Boolean testWhileIdle;
 
     /**
      * 配置数据源
@@ -54,8 +54,8 @@ public class DBConfig {
         dataSource.setUsername(userName);
         dataSource.setPassword(password);
         dataSource.setDriverClassName(driverClassName);
-        dataSource.setTestWhileIdle(testWhileIdle);
-        dataSource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
+//        dataSource.setTestWhileIdle(testWhileIdle);
+//        dataSource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
         return dataSource;
     }
 

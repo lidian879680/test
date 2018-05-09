@@ -25,4 +25,9 @@ public class UserServiceImp implements UserService {
         Long rows = userDao.insert(userBean);
         return rows.toString();
     }
+
+    @Override
+    public UserBean getUser(String uid) {
+        return userDao.getByUid(uid);
+    }
 }
