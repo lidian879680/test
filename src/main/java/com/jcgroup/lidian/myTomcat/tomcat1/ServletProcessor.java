@@ -31,7 +31,12 @@ public class ServletProcessor {
             URLClassLoader classLoader = new URLClassLoader(uris);
             Class aClass = classLoader.loadClass(servletName);
             Servlet servlet = (Servlet) aClass.newInstance();
-            servlet.service(request, response);
+
+            //使用门面模式
+            RequestFacade requestFacade = new RequestFacade(request);
+            ResponseFacade responseFacade = new ResponseFacade(response);
+
+            servlet.service(requestFacade, responseFacade);
         }  catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
